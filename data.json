@@ -1,0 +1,65 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "created_at": "2024-05-08",
+      "name": "Milk",
+      "description": "Real",
+      "image": "",
+      "category": 6,
+      "price": 150,
+      "updated_at": "2024-05-08"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "created_at": "2024-05-08",
+      "name": "Water",
+      "description": "from Russia",
+      "image": "",
+      "category": 6,
+      "price": 120,
+      "updated_at": "2024-05-08"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "created_at": "2024-05-08",
+      "name": "Korovkino",
+      "description": "From Kazan",
+      "image": "",
+      "category": 7,
+      "price": 90,
+      "updated_at": "2024-05-08"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Meat",
+      "description": "Teasty"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Beverages",
+      "description": "without alc"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "name": "Ice-scream",
+      "description": "cold"
+    }
+  }
+]
