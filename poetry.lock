@@ -407,6 +407,22 @@ files = [
 windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
+name = "pystache"
+version = "0.6.5"
+description = "Mustache for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pystache-0.6.5-py3-none-any.whl", hash = "sha256:84546278219431f1a2ecc86a627cc1b0fe3c83b5612f8a7d9c81ea0119ac8f49"},
+    {file = "pystache-0.6.5.tar.gz", hash = "sha256:9f238d5a06f18843e0d491d8e4e292dc03fed6a54cb0a5c34be37a3faa973174"},
+]
+
+[package.extras]
+cov = ["coverage", "coverage-python-version"]
+doc = ["recommonmark", "sphinx", "sphinx-git", "sphinx-rtd-theme", "sphinxcontrib-apidoc"]
+test = ["pytest", "pytest-cov"]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -452,6 +468,19 @@ pure-eval = "*"
 tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
+name = "static"
+version = "1.1.1"
+description = "Serve static or templated content via WSGI or stand-alone."
+optional = false
+python-versions = "*"
+files = [
+    {file = "static-1.1.1.tar.gz", hash = "sha256:4a2dfc165c9242304b117e80fb200eb62742a1c51dbaac50451419dccee76395"},
+]
+
+[package.dependencies]
+pystache = "*"
+
+[[package]]
 name = "traitlets"
 version = "5.14.3"
 description = "Traitlets Python configuration system"
@@ -491,4 +520,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "cdcab589c886c5d5740c7b4efdd35e1647a579047bea763ca2022aba809892f4"
+content-hash = "4f6230000794461df5abc39900e8499418ee9f9d646347ace4e3a51271edff16"
