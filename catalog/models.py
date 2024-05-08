@@ -37,7 +37,7 @@ class Category(models.Model):
     description = models.TextField(verbose_name="Описание", help_text='Введите описание категории', **NULLABLE)
 
     def __str__(self):
-        return f'{self.name} {self.description}'
+        return self.name
 
     class Meta:
         verbose_name = "Категория"
