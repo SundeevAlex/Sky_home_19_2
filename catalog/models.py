@@ -15,6 +15,7 @@ class Product(models.Model):
         related_name="products",
     )
     price = models.IntegerField(verbose_name="Цена", help_text='Введите цену продукта', **NULLABLE)
+    manufactured_at = models.DateField(verbose_name="Дата создания", **NULLABLE)
     created_at = models.DateField(
         auto_created=True, verbose_name="Дата создания", **NULLABLE
     )
