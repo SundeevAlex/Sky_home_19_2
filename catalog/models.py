@@ -6,7 +6,7 @@ NULLABLE = {'blank': 'True', 'null': 'True'}
 class Product(models.Model):
     name = models.CharField(max_length=50, verbose_name="Наименование", help_text='Введите наименование продукта')
     description = models.TextField(verbose_name="Описание", help_text='Введите описание продукта', **NULLABLE)
-    image = models.ImageField(upload_to="media/photo", help_text='Загрузите фото продукта', **NULLABLE)
+    image = models.ImageField(upload_to="products/photo", help_text='Загрузите фото продукта', **NULLABLE)
     category = models.ForeignKey(
         "Category",
         on_delete=models.SET_NULL,
