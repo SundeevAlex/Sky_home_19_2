@@ -13,6 +13,7 @@ pillow = "^10.3.0"
 ipython = "^8.24.0"
 static = "^1.1.1"
 psycopg = "^3.1.19"
+pytils = "^0.4.1"
 
 
 [build-system]

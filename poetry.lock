@@ -446,6 +446,16 @@ doc = ["recommonmark", "sphinx", "sphinx-git", "sphinx-rtd-theme", "sphinxcontri
 test = ["pytest", "pytest-cov"]
 
 [[package]]
+name = "pytils"
+version = "0.4.1"
+description = "Russian-specific string utils"
+optional = false
+python-versions = "^3.7"
+files = [
+    {file = "pytils-0.4.1.tar.gz", hash = "sha256:aa109b1bc0ec4bdb7c9768520110348d8aeb0706600e6cf641272e6850e26eab"},
+]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -554,4 +564,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "d1f076cf6cdb233794e0254033cf5f693c953b8b116ec21383cebab272873695"
+content-hash = "21c3cb26ac08558c8bb544e02b6df701e7c73d23a9d86f1b2f3a53e39e9647e5"
