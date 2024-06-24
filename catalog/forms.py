@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from catalog.models import Product
+from catalog.models import Product, Version
 from django import forms
 
 prohibited_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
@@ -24,3 +24,11 @@ class ProductForm(ModelForm):
             if el in cleaned_description:
                 raise forms.ValidationError('Нельзя использовать это слово!')
         return cleaned_description
+
+
+class VersionForm(ModelForm):
+
+    class Meta:
+        model = Version
+        fields = '__all__'
+
