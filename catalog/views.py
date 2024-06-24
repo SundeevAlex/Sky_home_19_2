@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from catalog.forms import ProductForm
-from catalog.models import Product
+from catalog.models import Product, Version
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
 from pytils.translit import slugify
@@ -26,6 +26,21 @@ class ProductDeleteView(DeleteView):
 
 class ProductListView(ListView):
     model = Product
+
+    def get_context_data(self, *args, **kwargs):
+        context_data = super().get_context_data(*args, **kwargs)
+        products = self.get_queryset(*args, **kwargs)
+
+        for product in products:
+            versions = Version.objects.filter(product=product)
+            active_versions = versions.filter(is_active_version=True)
+            if active_versions:
+                product.active_version = active_versions.last().version_title
+            else:
+                product.active_version = 'Нет активной версии'
+
+        context_data['object_list'] = products
+        return context_data
 
 
 class ProductDetailView(DetailView):
