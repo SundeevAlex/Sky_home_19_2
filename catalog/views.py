@@ -69,6 +69,13 @@ class ProductUpdateView(UpdateView, LoginRequiredMixin):
             return ProductModeratorForm
         raise PermissionDenied
 
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        if self.request.user == self.object.owner:
+            self.object.save()
+            return self.object
+        raise PermissionDenied
+
 
 class ProductDeleteView(DeleteView, LoginRequiredMixin):
     model = Product
