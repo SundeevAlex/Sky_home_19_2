@@ -14,6 +14,8 @@ static = "^1.1.1"
 psycopg = "^3.1.19"
 pytils = "^0.4.1"
 django = "4.2.2"
+redis = "^5.0.7"
+python-dotenv = "^1.0.1"
 
 
 [build-system]
