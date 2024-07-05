@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.exceptions import PermissionDenied
 from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
 from pytils.translit import slugify
 from django.forms import inlineformset_factory
 from django.contrib.auth.mixins import LoginRequiredMixin
+from catalog.services import get_categories_from_cache
 
 
 # class VersionCreateView(CreateView):
@@ -19,6 +20,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 #     model = Version
 #     form_class = VersionForm
 #     success_url = reverse_lazy('catalog:products_list')
+
+
+class CategoryListView(LoginRequiredMixin, ListView):
+    model = Category
+
+    def get_queryset(self):
+        return get_categories_from_cache()
 
 
 class ProductCreateView(CreateView, LoginRequiredMixin):
